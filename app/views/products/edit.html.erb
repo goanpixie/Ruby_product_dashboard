@@ -12,4 +12,5 @@
 
 </form>
 
-	<td><a href="/products/<%= @products.id%>"><strong> Show </strong></a></td>
+	<a href="/products/<%= @products.id%>"><strong> Show </strong></a>
+	<%= button_to "Go Back", {:controller =>"products", :action => "index" }, :method=> :get %>

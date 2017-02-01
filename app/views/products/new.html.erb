@@ -2,6 +2,17 @@
 
 <form action="/products" method="post">
 	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    
+
+    Category: <select name="category" type="string">
+    	
+  <option value="electronics">Electronics</option>
+  <option value="household">Househod</option>
+  <option value="gardening">Gardening</option>
+  <option value="automotive">Automotive</option>
+  <option value="ninjas">Ninjas</option>
+
+    </select>	<br>
 
 	Name:<input type="string" name="name" ><br>
 	Description:<input type="text" name="description"><br>
@@ -10,3 +21,14 @@
 
 
 </form>
+
+<%= button_to "Go Back", {:controller =>"products", :action => "index" }, :method=> :get %>
+
+  <label for="Name">Name:</label>
+  <input type="text" name="product[name]" id="Name">
+  <label for="Category">Category</label>
+  <select name="product[category]" id="Category">
+    <% @categories.each do |category| %>
+      <option value="<%= category.id %>"><%= category.name %></option>
+    <% end %>
+  </select>
