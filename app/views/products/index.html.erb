@@ -10,9 +10,20 @@
 <% @products.each do |a|%>
 <tr>
 
-	<td><a href="/products/<%= a.id%>"> <%= a.name %> </a></td>
-	<td>a <%= a.description %></td>
-	<td><%= a.pricing %></td>
+	<td> <%= a.name %></td>
+	<td><%= a.description %></td>
+	<td> <%= a.pricing %></td>
+	<td><a href="/products/<%= a.id%>"><strong> Show </strong></a></td>
+	<td><a href="/products/<%= a.id%>/edit"><strong> Edit </strong></a></td>
+	<td>
+		
+<form action = "/products/<%= a.id%>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+	<input type="submit" value="delete">
+</form>
+
+	</td>
 	
 </tr>
 <% end %>

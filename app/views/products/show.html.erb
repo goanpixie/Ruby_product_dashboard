@@ -2,11 +2,5 @@
 <h1><%= @products.description%></h1>
 <h1><%= @products.pricing%></h1>
 
-<a href="/products/<%= @products.id%>/edit"> Edit Product</a>
 
 
-<form action = "/products/<%= @products.id%>" method="post">
-	<input type="hidden" name="_method" value="delete">
-	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-	<input type="submit" value="delete">
-</form>
