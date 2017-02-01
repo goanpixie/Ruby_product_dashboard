@@ -7,13 +7,16 @@
 	<td>pricing</td>
 
 </tr>
-
-<tr>
 <% @products.each do |a|%>
-	<td><%= a.name %></td>
-	<td><%= a.description %></td>
+<tr>
+
+	<td><a href="/products/<%= a.id%>"> <%= a.name %> </a></td>
+	<td>a <%= a.description %></td>
 	<td><%= a.pricing %></td>
-<% end %>	
+	
 </tr>
+<% end %>
 
 </table>
+
+<a href="/products/new">New Product</a>
